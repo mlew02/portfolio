@@ -76,6 +76,7 @@ const Works = () => {
                                     <div className='entry-content' dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}></div>
                                     <p className='requirements'>{slicerequirements(post.acf.requirements, 250)}</p>
                                     <Link to={`${post.slug}`} className='single-page'>More Details</Link>
+                                    
                                 </article>
                             ))}
                         </div>

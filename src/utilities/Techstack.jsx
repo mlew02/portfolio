@@ -5,9 +5,9 @@ const TechStack = ({ technologies }) => {
     return (
         <div className="tech-stack">
             {technologies.map((tech, index) => (
-                <div key={index} className="tech-item">
-                    <StackIcon name={tech} className="tech-icons"/>
-                    <span>{tech}</span>
+                <div key={index} id={tech.label} className="tech-item">
+                    <StackIcon name={tech.value}  className="tech-icons"/>
+                    <span>{tech.label}</span>
                 </div>
             ))}
         </div>

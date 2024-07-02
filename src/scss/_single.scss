@@ -1,0 +1,49 @@
+@use 'vars' as *;
+
+.single-project{
+    .featured-image{
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+   h2.project-title{
+    padding-left: 0;
+   }
+   a.github, .live-site {
+    display: block;
+    width: fit-content;
+ 
+    text-decoration: none;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    padding: 10px 20px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    font-family: $bodyfont;
+    letter-spacing: 1.5px;
+   }
+   .links{
+    display: flex;
+    padding-bottom: 3rem;
+    margin: 0 auto;
+    justify-content: center;
+    gap: 15px;
+   }
+   p.requirements{
+    padding: 1rem 2rem 1rem 2rem;
+   }
+    .mobile-hidden{
+        display: block;
+        pointer-events: none;
+        cursor: default;
+   }
+   p{
+    color: $textcolor;
+    font-family: $bodyfont2;
+    line-height: 1.5;
+   }
+  
+   .live-site{
+    cursor: pointer;
+   }
+  
+}

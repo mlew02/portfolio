@@ -4,11 +4,11 @@ import { restBase } from '../utilities/Utilities'
 import Works from "../sections/Works";
 
 import TechStack from "../utilities/Techstack";
-
+import Background from "../components/background";
 
 
 const Home = () => {
-    const restPath = restBase + 'pages/53?_embed?acf_format=standard'
+    const restPath = restBase + 'pages/53?acf_format=standard&_embed'
     const [restData, setData] = useState(null)
     const [isLoaded, setLoadStatus] = useState(false)
 
@@ -26,11 +26,16 @@ const Home = () => {
         fetchData()
     }, [restPath])
 
+  
+
     return (
         <>
+        <Background />
         { isLoaded ? 
+        
         <div>
-             <div className="header-content">
+           
+             <div className="header-content" id='home'>
              <section>
                  <h1>{restData.acf.name}</h1>
                  <p>{restData.acf.web}</p>
@@ -40,31 +45,33 @@ const Home = () => {
            
          </div>
 
-         <div className="about-content">
+         <div className="about-content" id='about'>
              <section>
                  <h2>{restData.acf.about_me}</h2>
                 <div className='about'>
                  <p>{restData.acf.introduction}</p>
                  <p>{restData.acf.more_about}</p>
                  </div>
-                 {/* <p>{restData.acf.skills}</p> */}
                  <div>
-                {restData.acf.skills && Array.isArray(restData.acf.skills) && restData.acf.skills.length > 0 && (
+                 <h3>{restData.acf.tools_title}</h3>
+                {restData.acf.skills && Array.isArray(restData.acf.skills) && restData.acf.skills[0]  && (
                             <TechStack technologies={restData.acf.skills[0].check} />
                         )}
                 </div>
+                 {/* <p>{restData.acf.skills}</p> */}
+                
                  
              </section>
 
          </div>
 
-         <div className="work-content">
+         <div className="work-content" id='work'>
            <Works />
            
          </div>
          
 
-         <div className="contact-content">
+         <div className="contact-content" id='contact'>
              <section>
                  <h2>{restData.acf.contact_me}</h2>
                  <p>{restData.acf.contact}</p>  
