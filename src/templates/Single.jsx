@@ -7,6 +7,7 @@ import TechStack from "../utilities/Techstack";
 import Background from "../components/background";
 
 
+
 const Single = () => {
     const { slug } = useParams();
     const restPath = `${restBase}posts?slug=${slug}&acf_format=standard&_embed`;
@@ -27,6 +28,8 @@ const Single = () => {
         fetchData();
     }, [restPath]);
 
+   
+
     return (
         <>
          <Background />
@@ -40,13 +43,13 @@ const Single = () => {
                         <div className='links'>
                         <a href={postData.acf.github} className='github'>Github</a>
                         {postData.acf.mobile_view === true ?
-                        <a href={postData.acf.live_site_} className='live-site mobile-hidden'>Desktop Only</a> :
-                        <a href={postData.acf.live_site_} className='live-site'>Live Site</a>
-                        }
+                        ( <a href={postData.acf.live_site_} className='live-site mobileHidden'>Live Site</a> ) :
+                        ( <a href={postData.acf.live_site_} className='live-site'>Live Site</a> )}
                         </div>
 
                         <div className="entry-content" dangerouslySetInnerHTML={{__html: postData.content.rendered}}></div>
                         <p className='requirements'>{postData.acf.requirements}</p>
+                        <h2>{postData.acf.tools_used}</h2>
 
                         <div className='techstack-single'>
                         {postData.acf.skills && Array.isArray(postData.acf.skills) && postData.acf.skills.length > 0 && (

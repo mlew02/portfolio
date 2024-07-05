@@ -36,11 +36,11 @@ p{
     border-radius: 8px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
    
-}
-.about-content .about h3 {
-    padding-top: 2rem;
-    margin-bottom: 0;
-    padding-left: 1rem;
+    &h3 {
+       padding-top: 2rem;
+       margin-bottom: 0;
+       padding-left: 1rem;
+   }
 }
 }
 .tech-stack {
@@ -68,9 +68,9 @@ p{
         font-family: $bodyfont2;
         margin: 0.1rem;
     }
-
-    
+ 
 }
+
 .tech-stack #mySQL span svg path{
     fill: white;
 }
@@ -97,16 +97,32 @@ p{
     }
 }
 @media screen and (min-width: 50em) {
-    .about-content h2 {
-        font-size: 2.5rem; 
-
-    .about-content p {
-        font-size: 1.2rem;
+    .about-content {
+        h2 {
+            font-size: 2.2rem;
+            text-align: start;
+        }
+        .about {
+            font-size: 1.5rem;
+            max-width: 70%; 
+        }
+        h3 {
+            padding-top: 5rem;
+            padding-bottom: 1rem;
+            font-size: 2rem;
+            max-width: 52%;
+            margin: 0 auto;
+            
+            
+        }
     }
-
     .tech-stack {
-        gap: 24px; 
+        gap: 24px;
+        width: 55%;
+        margin: 0 auto;
+        padding: 7px;
     }
-
-}
+    .tech-item{
+        width: 20%;
+    }
 }

@@ -1,12 +1,27 @@
 @use 'vars' as *;
 
+
+
+.container {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  
+  .centered-div {
+    width: 30%; 
+  }
+
+
 .header-content{
     h1{
         // width: 250px;
         font-size: 2.3rem;
         // padding-left: 1rem;
         text-align: center;
-        padding-top: 10rem;
+        padding-top: 5rem;
         font-family: $headerfont;
         color: $textcolor;
     }
@@ -20,4 +35,38 @@
 }
 div#root{
     padding: 0;
+}
+
+@media screen and (min-width: 50em) {
+    .desktop-nav {
+        .nav-icon {
+          content: url('src/images/white-home.png');
+        }
+        .nav-icon#about {
+          content: url('src/images/white-about.png');
+        }
+        .nav-icon#works {
+          content: url('src/images/white-works.png');
+        }
+        .nav-icon#mail {
+          content: url('src/images/white-mail.png');
+        }
+      }
+    .container{
+        display: block;
+        img{
+            width:125px;
+            height:125px;
+           
+        }
+    }
+    .header-content{
+        h1{
+            font-size: 3rem;
+        }
+        p{
+            font-size: 2rem;
+        }
+    }
+
 }

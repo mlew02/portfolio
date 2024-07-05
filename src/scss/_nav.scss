@@ -9,8 +9,8 @@
         justify-content: space-around; 
         align-items: center; 
         background-color: $textcolor;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        padding-top: 0.7rem;
+        padding-bottom: 0.7rem;
         position: fixed;
         bottom: 0;
         width: 100%;
@@ -34,14 +34,49 @@
     }
 
     img {
-        width: 70%;
+        width: 50%;
         height: auto;
         display: block;
         margin: 0 auto; 
     }
 
-    #mail {
-        width: 37.81px;
-        height: 37.81px;
+  
+}
+
+
+@media screen and (min-width: 50em) {
+   
+    .site-navigation {
+        .desktop-nav{
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+        }
+       
+        ul {
+            justify-content: flex-start;
+            flex-direction: column;
+            position: fixed;
+            right: 0; 
+            top: 0;
+            bottom: unset;
+            width: auto;
+            height: 100%; 
+            padding: 0;
+            background-color: transparent; 
+            
+        }
+        a{
+            color: $textcolor;
+        }
+        img {
+            width: 20%; 
+            height: auto;
+            display: block;
+            margin: 0 auto; 
+            
+        }
+        
     }
+    
 }

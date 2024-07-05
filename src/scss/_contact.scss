@@ -37,3 +37,20 @@
 
    }
 }
+
+@media screen and (min-width: 50em) {
+    .contact-content {
+        a.email{
+            font-size: 1.4rem;
+        }
+        p{
+            font-size: 1.4rem;
+            padding-bottom: 1rem;
+        }
+        h2{
+            text-align: center;
+            padding-bottom: 1rem;
+            font-size: 2.2rem;
+        }
+    }
+}
