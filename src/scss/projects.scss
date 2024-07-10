@@ -96,62 +96,7 @@ div.project-container{
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   
 }
-//this section for the accodion is helped by 
 
-.szh-accordion {
-  border-bottom: 1px solid #ccc;
-  &__item {
-    border-top: 1px solid #ccc;
-
-    &-btn {
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      width: 100%;
-      margin: 0;
-      padding: 1rem;
-      font-size: 1rem;
-      font-weight: 400;
-      text-align: left;
-      color: $textcolor;
-      background-color: transparent;
-      border: none;
-      font-family: $bodyfont2;
-      font-weight: 700;
-      font-size: 1.2rem;
-
-    
-      &:hover {
-        background-color: rgba(255, 255, 255, .2);
-      } 
-      &-content {
-        transition: height 0.25s cubic-bezier(0, 0, 0, 1);
-      }
-  
-      &-panel {
-        padding: 1rem;
-      }
-      &--expanded {
-        .szh-accordion__item-btn {
-          background-color: #e7e7e7;
-        }
-        .chevron-down {
-          transform: rotate(180deg);
-        }
-         li{
-          color: $textcolor;
-          font-family: $bodyfont2;
-          line-height: 1.5;
-        }
-      }
-    }
-    div{
-      color: $textcolor;
-      font-family: $bodyfont2;
-      line-height: 1.5;
-     }
-}
-}
 
 @media screen and (min-width: 50em) {
   .images {
@@ -165,6 +110,9 @@ div.project-container{
   }
 
   .featured-projects {
+    .works-title{
+      margin-left: 19%;
+    }
     div.project-container {
       max-width: 60%;
     }
@@ -173,11 +121,12 @@ div.project-container{
       text-align: start;
       font-size: 2.2rem;
       padding-bottom: 1rem;
+      
     }
   }
 
   p.requirements {
-    font-size: 1.4rem; 
+    font-size: 1.5rem; 
   }
   a.single-page {
     font-size: 1.4rem; 

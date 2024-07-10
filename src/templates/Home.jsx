@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react'
 import Loading from '../utilities/Loading'
 import { restBase } from '../utilities/Utilities'
 import Works from "../sections/Works";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 import TechStack from "../utilities/Techstack";
 import Background from "../components/background";
 
@@ -26,7 +27,8 @@ const Home = () => {
         fetchData()
     }, [restPath])
 
-  
+    AOS.init();
+    AOS.refresh();
 
     return (
         <>
@@ -36,7 +38,7 @@ const Home = () => {
         <div>
            
              <div className="header-content" id='home'>
-             <section>
+             <section className='header-section'data-aos="flip-down" data-aos-delay={(restData * 1200).toString()}>
                  <h1>{restData.acf.name}</h1>
                  <p>{restData.acf.web}</p>
                  <p>{restData.acf.intro}</p>
@@ -46,7 +48,7 @@ const Home = () => {
          </div>
 
          <div className="about-content" id='about'>
-             <section>
+             <section data-aos="fade-right" data-aos-delay={(restData * 1200).toString()} >
                  <h2>{restData.acf.about_me}</h2>
                 <div className='about'>
                  <p>{restData.acf.introduction}</p>
@@ -72,7 +74,7 @@ const Home = () => {
          
 
          <div className="contact-content" id='contact'>
-             <section>
+             <section data-aos="fade-left" data-aos-delay={(restData * 900).toString()}>
                  <h2>{restData.acf.contact_me}</h2>
                  <p>{restData.acf.contact}</p>  
                  <a href="mailto:{{restData.acf.email}}" className='email'>Send Message</a>

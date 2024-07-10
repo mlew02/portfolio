@@ -101,6 +101,9 @@ p{
         h2 {
             font-size: 2.2rem;
             text-align: start;
+            margin-top: 30rem;
+            margin-left: 15%;
+            padding-bottom: 1rem;
         }
         .about {
             font-size: 1.5rem;
@@ -110,10 +113,13 @@ p{
             padding-top: 5rem;
             padding-bottom: 1rem;
             font-size: 2rem;
-            max-width: 52%;
+            max-width: 65%;
             margin: 0 auto;
             
             
+        }
+        p{
+            font-size: 1.5rem;
         }
     }
     .tech-stack {

@@ -1,12 +1,20 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import Loading from '../utilities/Loading';
 import { restBase, featuredImage } from '../utilities/Utilities';
 import { Accordion, AccordionItem } from '@szhsin/react-accordion';
 import TechStack from "../utilities/Techstack";
 import Background from "../components/background";
+import cheveronDown from "../assets/cheveron-down.svg";
+import { HashLink } from 'react-router-hash-link';
 
 
+const AccordionHeader = ({ text }) => (
+    <>
+        {text}
+        <img className="chevron-down" src={cheveronDown} alt="Chevron Down" />
+    </>
+)
 
 const Single = () => {
     const { slug } = useParams();
@@ -28,7 +36,7 @@ const Single = () => {
         fetchData();
     }, [restPath]);
 
-   
+
 
     return (
         <>
@@ -36,10 +44,21 @@ const Single = () => {
             {isLoaded && postData ? 
                 <div>
                     <section className='single-project'>
+                    <div className='backproject'>
+                    <HashLink smooth to="/#work"  className="back-to-projects">
+                    <img src="/src/images/arrow.png" alt="Arrow" className="arrow" />
+                    <span>Back to Projects</span>
+                    </HashLink>
+                    {/* <Link to="/#work" className="back-to-projects">
+                    <img src="/src/images/arrow.png" alt="Arrow" className="arrow" />
+                    <span>Back to Projects</span>
+                    </Link> */}
+                    </div>
                         <h2 className='project-title'>{postData.title.rendered}</h2>
                         {postData.featured_media !== 0 && postData._embedded &&
                             <figure className="featured-image" dangerouslySetInnerHTML={featuredImage(postData._embedded['wp:featuredmedia'][0])}></figure>
                         }
+                        
                         <div className='links'>
                         <a href={postData.acf.github} className='github'>Github</a>
                         {postData.acf.mobile_view === true ?
@@ -49,7 +68,7 @@ const Single = () => {
 
                         <div className="entry-content" dangerouslySetInnerHTML={{__html: postData.content.rendered}}></div>
                         <p className='requirements'>{postData.acf.requirements}</p>
-                        <h2>{postData.acf.tools_used}</h2>
+                        <h3>{postData.acf.tools_used}</h3>
 
                         <div className='techstack-single'>
                         {postData.acf.skills && Array.isArray(postData.acf.skills) && postData.acf.skills.length > 0 && (
@@ -57,14 +76,33 @@ const Single = () => {
                         )}
                         </div>
                         <Accordion>
-                            <AccordionItem header="Features">
-                                <div dangerouslySetInnerHTML={{__html: postData.acf.cool_features_box}}></div>
+
+                        <AccordionItem 
+                        header={
+                            <AccordionHeader 
+                            text={ postData.acf.cool_features_text} />
+                            } >
+                            <div dangerouslySetInnerHTML={{__html: postData.acf.cool_features_box}}></div>
                             </AccordionItem>
-                            <AccordionItem header="Challenges">
+                            {/* <AccordionItem 
+                            header="Features">
+                                <div dangerouslySetInnerHTML={{__html: postData.acf.cool_features_box}}></div>
+                            </AccordionItem> */}
+                            {/* <AccordionItem header="Challenges">
                                 <div dangerouslySetInnerHTML={{__html: postData.acf.challanges}}></div>
+                            </AccordionItem> */}
+
+                            
+                        <AccordionItem 
+                        header={
+                            <AccordionHeader 
+                            text={ postData.acf.challenges_title} />
+                            } >
+                            <div dangerouslySetInnerHTML={{__html: postData.acf.challanges}}></div>
                             </AccordionItem>
                         </Accordion>
                     </section>
+                    
                 </div>
             : 
                 <Loading /> 

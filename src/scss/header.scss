@@ -62,10 +62,18 @@ div#root{
     }
     .header-content{
         h1{
-            font-size: 3rem;
+            font-size: 5rem;
         }
         p{
-            font-size: 2rem;
+            font-size: 4rem;
+        }
+        .header-section{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 60vh;
+          flex-direction: column;
+          
         }
     }
 

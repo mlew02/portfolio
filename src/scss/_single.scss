@@ -1,6 +1,30 @@
 @use 'vars' as *;
 
 .single-project{
+  .backproject {
+    max-width: 90%;
+    margin: 0 auto;
+    padding-top: 1rem;
+
+    .back-to-projects {
+        font-size: 1rem;
+        color: $textcolor;
+        font-family: $bodyfont;
+        letter-spacing: 0.2rem;
+        text-decoration: none;
+        
+        .arrow {
+            width: 20px;
+            height: auto;
+            margin-right: 0.5rem; 
+            display: inline-block;
+        }
+        &:hover {
+          // opacity: 0.8;
+          text-decoration: underline;
+        }
+    }
+}
     .featured-image{
         padding-top: 2rem;
         padding-bottom: 2rem;
@@ -8,10 +32,18 @@
    h2.project-title{
     padding-left: 0;
    }
+   h3{
+    color: $textcolor;
+    font-family: $headerfont;
+    padding-bottom: 0;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+    font-size: 1.3rem;
+    text-align: center;
+   }
    a.github, .live-site {
     display: block;
     width: fit-content;
- 
     text-decoration: none;
     color: #F0F5FA;
     background-color: rgba(255, 255, 255, 0.1);
@@ -41,11 +73,15 @@
     font-family: $bodyfont2;
     line-height: 1.5;
    }
-  
+  .techstack-single{
+    .tech-stack{
+      padding-top: 1rem;
+    }
+  }
    .live-site{
     cursor: pointer;
 
-    @media screen and (max-width: 50em) {
+    // @media screen and (max-width: 50em) {
       &.mobileHidden {
         display: none;
       }
@@ -54,8 +90,150 @@
   h2{
     padding-top: 2rem;
   }
-  .tech-stack{
-    gap: 7px;
+ 
+  //this section for the accodion is helped by 
+  .chevron-down {
+    margin-left: auto;
+    transition: transform 0.25s cubic-bezier(0, 0, 0, 1);
+    position: relative;
+    z-index: -1;
+    
   }
+  .szh-accordion__item--expanded {
+      .szh-accordion__item-btn {
+        background-color: #e7e7e7;
+      }
+      .chevron-down {
+        transform: rotate(180deg);
+      }
+       li{
+        color: $textcolor;
+        font-family: $bodyfont2;
+        line-height: 1.5;
+      }
+    }
   
+.szh-accordion {
+  .szh-accordion__item-content{
+    padding: 1rem;
+  }
+  border-bottom: 1px solid #ccc;
+  &__item {
+    border-top: 1px solid #ccc;
+
+    &-btn {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin: 0;
+      padding: 1rem;
+      font-size: 1rem;
+      font-weight: 400;
+      text-align: left;
+      color: $textcolor;
+      background-color: transparent;
+      border: none;
+      font-family: $bodyfont2;
+      font-weight: 700;
+      font-size: 1.2rem;
+
+    
+      &:hover {
+        background-color: rgba(255, 255, 255, .2);
+      } 
+      &-content {
+        transition: height 0.25s cubic-bezier(0, 0, 0, 1);
+      }
+  
+      &-panel {
+        padding: 1rem;
+      }
+      // &--expanded {
+      //   .szh-accordion__item-btn {
+      //     background-color: #e7e7e7;
+      //   }
+      //   .chevron-down {
+      //     transform: rotate(180deg);
+      //   }
+      //    li{
+      //     color: $textcolor;
+      //     font-family: $bodyfont2;
+      //     line-height: 1.5;
+      //   }
+      // }
+    }
+    div{
+      color: $textcolor;
+      font-family: $bodyfont2;
+      line-height: 1.5;
+     }
+}
+}
+  // }
+@media screen and (min-width: 50em) {
+ .single-project{
+  h2{
+    font-size: 3rem;
+  }
+  img{
+    width: 40%;
+    margin: 0 auto;
+    display: block;
+  }
+  a.github, .live-site {
+    font-size: 1.4rem;
+  }
+  p.requirements{
+    max-width: 70%;
+  }
+  h3{
+    font-size: 1.5rem;
+  }
+  .backproject {
+    .back-to-projects {
+        font-size: 1.8rem;
+
+    }
+}
+.chevron-down{
+  width: 50px;
+  height: 50px;
+  margin-right: 1rem;
+}
+  .szh-accordion {
+    max-width: 80%;
+    margin: 0 auto;
+    button{
+      font-size: 1.8rem;
+    }
+    p{
+      font-size: 1.5rem;
+      line-height: 2rem;
+      padding: 0;
+    }
+    &-panel {
+      padding: 2rem;
+      font-size: 1.5rem;
+    }
+    .szh-accordion__item-content{
+      div{
+        font-size: 1.2rem;
+      }
+    }
+  }
+  // .szh-accordion {
+  //   max-width: 80%;
+  //   margin: 0 auto;
+  //   p{
+  //     font-size: 1.5rem;
+  //     line-height: 2rem;
+  //     padding: 0;
+  //   }
+  //   &-panel {
+  //     padding: 2rem;
+  //     font-size: 1.5rem;
+  //   }
+  // }
+ }
 }

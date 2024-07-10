@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import Loading from '../utilities/Loading';
 import { restBase, featuredImage, slicerequirements } from '../utilities/Utilities';
 import { Link } from 'react-router-dom';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Works = () => {
     const restPath = restBase + 'posts?_embed';
@@ -48,14 +50,15 @@ const Works = () => {
     const changeSlide = (index) => {
         setCurrentIndex(index);
     };
-
+    AOS.init();
+    AOS.refresh();
     return (
         <>
             {isLoaded ? (
                 <div>
                     <section className='featured-projects'>
-                        <h2>Featured Projects</h2>
-                        <div className='project-container'>
+                        <h2 className='works-title'data-aos="flip-down" data-aos-delay={(restData * 1200).toString()}>Featured Projects</h2>
+                        <div className='project-container'data-aos="flip-down" data-aos-delay={(restData * 1200).toString()}>
                             {restData.map((post, index) => (
                                 <article key={post.id} id={`post-${post.id}`} style={{ display: index === currentIndex ? 'block' : 'none' }}>
                                     <div className='images'>
