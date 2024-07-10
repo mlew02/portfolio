@@ -149,19 +149,6 @@
       &-panel {
         padding: 1rem;
       }
-      // &--expanded {
-      //   .szh-accordion__item-btn {
-      //     background-color: #e7e7e7;
-      //   }
-      //   .chevron-down {
-      //     transform: rotate(180deg);
-      //   }
-      //    li{
-      //     color: $textcolor;
-      //     font-family: $bodyfont2;
-      //     line-height: 1.5;
-      //   }
-      // }
     }
     div{
       color: $textcolor;
@@ -218,22 +205,9 @@
     }
     .szh-accordion__item-content{
       div{
-        font-size: 1.2rem;
+        font-size: 1.5rem;
       }
     }
   }
-  // .szh-accordion {
-  //   max-width: 80%;
-  //   margin: 0 auto;
-  //   p{
-  //     font-size: 1.5rem;
-  //     line-height: 2rem;
-  //     padding: 0;
-  //   }
-  //   &-panel {
-  //     padding: 2rem;
-  //     font-size: 1.5rem;
-  //   }
-  // }
  }
 }
