@@ -36,11 +36,53 @@
     font-family: $bodyfont;
 
    }
+   a.linked{
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    color: $textcolor;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50px; 
+    padding: 10px 20px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2); 
+    font-family: $bodyfont;
+    
+    
+   }
+   a.github{
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    color: $textcolor;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50px; 
+    padding: 10px 20px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2); 
+    font-family: $bodyfont;
+    
+    
+   }
+   .git{
+    padding-top: 2rem;
+   }
+   .linking{
+    padding-top: 2rem;
+   }
 }
 
 @media screen and (min-width: 50em) {
     .contact-content {
         a.email{
+            font-size: 1.4rem;
+        }
+        a.linked{
+            font-size: 1.4rem;
+        }
+        a.github{
             font-size: 1.4rem;
         }
         p{

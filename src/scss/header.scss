@@ -40,16 +40,16 @@ div#root{
 @media screen and (min-width: 50em) {
     .desktop-nav {
         .nav-icon {
-          content: url('src/images/white-home.png');
+          content: url('/assets/white-home.png');
         }
         .nav-icon#about {
-          content: url('src/images/white-about.png');
+          content: url('/assets/white-about.png');
         }
         .nav-icon#works {
-          content: url('src/images/white-works.png');
+          content: url('/assets/white-works.png');
         }
         .nav-icon#mail {
-          content: url('src/images/white-mail.png');
+          content: url('/assets/white-mail.png');
         }
       }
     .container{

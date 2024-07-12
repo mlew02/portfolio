@@ -33,18 +33,21 @@
     align-items: center;
     
 }
-
+.dot{
+  font-size: 0%;
+}
 .pagination-dots .dot {
     width: 1.25rem;
     height: 1.25rem;
     border-radius: 50%;
-    background: url(/src/images/circle.svg) no-repeat center center;
+    background: url(/assets/images/circle.svg) no-repeat center center;
     margin: 0 0.5rem;
     cursor: pointer;
     transition: box-shadow 0.3s ease;
     border-style: none;
     border: 2px black solid;
     background-color: rgba(255, 255, 255, .3);
+    
 }
 
 .pagination-dots .dot.active {

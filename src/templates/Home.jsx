@@ -77,7 +77,14 @@ const Home = () => {
              <section data-aos="fade-left" data-aos-delay={(restData * 900).toString()}>
                  <h2>{restData.acf.contact_me}</h2>
                  <p>{restData.acf.contact}</p>  
+                
                  <a href="mailto:{{restData.acf.email}}" className='email'>Send Message</a>
+                 <div className='linking'>
+                 <a href="https://www.linkedin.com/in/matthewjameslew" className="linked">LinkedIn</a>
+                 </div>
+                 <div className='git'>
+                 <a href="https://github.com/mlew02" className="github">GitHub</a>
+                 </div>
              </section>
          </div>
 

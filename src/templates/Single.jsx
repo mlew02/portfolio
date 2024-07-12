@@ -5,7 +5,7 @@ import { restBase, featuredImage } from '../utilities/Utilities';
 import { Accordion, AccordionItem } from '@szhsin/react-accordion';
 import TechStack from "../utilities/Techstack";
 import Background from "../components/background";
-import cheveronDown from "../assets/cheveron-down.svg";
+import cheveronDown from "/assets/cheveron-down.svg";
 import { HashLink } from 'react-router-hash-link';
 
 
@@ -46,13 +46,9 @@ const Single = () => {
                     <section className='single-project'>
                     <div className='backproject'>
                     <HashLink smooth to="/#work"  className="back-to-projects">
-                    <img src="/src/images/arrow.png" alt="Arrow" className="arrow" />
+                    <img src="/assets/arrow.png" alt="Arrow" className="arrow" />
                     <span>Back to Projects</span>
                     </HashLink>
-                    {/* <Link to="/#work" className="back-to-projects">
-                    <img src="/src/images/arrow.png" alt="Arrow" className="arrow" />
-                    <span>Back to Projects</span>
-                    </Link> */}
                     </div>
                         <h2 className='project-title'>{postData.title.rendered}</h2>
                         {postData.featured_media !== 0 && postData._embedded &&
@@ -83,16 +79,7 @@ const Single = () => {
                             text={ postData.acf.cool_features_text} />
                             } >
                             <div dangerouslySetInnerHTML={{__html: postData.acf.cool_features_box}}></div>
-                            </AccordionItem>
-                            {/* <AccordionItem 
-                            header="Features">
-                                <div dangerouslySetInnerHTML={{__html: postData.acf.cool_features_box}}></div>
-                            </AccordionItem> */}
-                            {/* <AccordionItem header="Challenges">
-                                <div dangerouslySetInnerHTML={{__html: postData.acf.challanges}}></div>
-                            </AccordionItem> */}
-
-                            
+                            </AccordionItem>                 
                         <AccordionItem 
                         header={
                             <AccordionHeader 
